@@ -1,0 +1,10 @@
+#teamsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: content;
+    width: 50%;
+}
+
+img {
+    max-width: 100%
+}
