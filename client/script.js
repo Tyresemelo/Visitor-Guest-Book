@@ -1,27 +1,13 @@
-const teamsWrapper = document.getElementById("teamsWrapper");
+const form = document.getElementById("Form");
 
-// get teams from from api
-async function getTeams() {
-    const response = await fetch(
+function handleSubmit(event) {
+event.preventDefault();
 
-    );
-    const teams = await response.json();console.log(teams);
 
-    // put the teams on the page
-    teams.forEach(function (team) {
-    // DOM  manipulation to put games onto html
-    const h2 = document.createElement("h2");
-    const p = document.createElement("p");
-    const img = document.createElement("img");
+const username = event.target.username.value;
+const message = event.target.message.value;
 
-    h2.textContent = team.name;
-    p.textContent = `Established in ${team.year}`;
-    img.src = team.imgUrl;
-    img.alt = team.name;
-
-    teamsWrapper.appendChild(h2);
-    teamsWrapper.appendChild(p);
-    teamsWrapper.appendChild(img);
-    });
+console.log({ username: username, message: message})
 }
-getTeams();
+
+form.addEventListener("submit", handleSubmit)
